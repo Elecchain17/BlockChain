@@ -22,6 +22,8 @@ var caUrl;
 var peerUrls = [];
 var EventUrls = [];
 
+var exports = module.exports = {};
+
 init();
 
 function init() {
@@ -272,4 +274,9 @@ function fileExists(filePath) {
     } catch (err) {
         return false;
     }
+}
+
+exports.init = function () {
+    init();
+    invoke();
 }

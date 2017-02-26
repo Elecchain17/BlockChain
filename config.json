@@ -1,5 +1,5 @@
 {
-   "chainName":"hello-world",
+   "chainName":"elechaintest",
    "deployWaitTime":"60",
    "user": {
 	"username": "JohnDoe",
@@ -10,9 +10,17 @@
       "functionName":"init",
       "args":[
          "a",
-         "100",
+         "0",
          "b",
-         "200"
+         "0",
+         "c",
+         "0",
+         "d",
+         "0",
+         "e",
+         "0",
+         "f",
+         "6"
       ]
    },
    "invokeRequest":{
