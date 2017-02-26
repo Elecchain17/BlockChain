@@ -276,7 +276,7 @@ function fileExists(filePath) {
     }
 }
 
-exports.init = function () {
+exports.vote = function (candidate, vote) {
     init();
     invoke();
 }

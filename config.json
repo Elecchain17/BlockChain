@@ -1,5 +1,5 @@
 {
-   "chainName":"elechaintest",
+   "chainName":"elechaintester",
    "deployWaitTime":"60",
    "user": {
 	"username": "JohnDoe",
