@@ -2,7 +2,7 @@
    "chainName":"elechaintester",
    "deployWaitTime":"60",
    "user": {
-	"username": "JohnDoe",
+	"username": "admin",
         "affiliation" : "group1"
    },
    "deployRequest":{
@@ -27,8 +27,8 @@
       "functionName":"invoke",
       "args":[
          "a",
-         "b",
-         "10"
+         "f",
+         "1"
       ]
    },
    "queryRequest":{

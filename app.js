@@ -7,7 +7,7 @@ app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
-var initialize = require('./helloblockchain.js');
+
 
 // initialize.init();
 app.get('/' ,function(req, res){
@@ -17,8 +17,8 @@ app.post('/vote', function(req, res){
     var candidate = req.body.candidate;
     var vote = req.body.vote;
 
-    res.send(candidate + vote);
-
+    
+    var initialize = require('./helloblockchain.js');
 
 });
 

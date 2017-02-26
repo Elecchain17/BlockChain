@@ -33,9 +33,6 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string
 	var Aval, Bval int // Asset holdings
 	var err error
 
-	if len(args) != 4 {
-		return nil, errors.New("Incorrect number of arguments. Expecting 4")
-	}
 
 	// Initialize the chaincode
 	A = args[0]
@@ -48,7 +45,27 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string
 	if err != nil {
 		return nil, errors.New("Expecting integer value for asset holding")
 	}
-	fmt.Printf("Aval = %d, Bval = %d\n", Aval, Bval)
+	C = args[4]
+	Cval, err = strconv.Atoi(args[5])
+	if err != nil {
+		return nil, errors.New("Expecting integer value for asset holding")
+	}
+	D = args[6]
+	Dval, err = strconv.Atoi(args[7])
+	if err != nil {
+		return nil, errors.New("Expecting integer value for asset holding")
+	}
+	E = args[8]
+	Eval, err = strconv.Atoi(args[9])
+	if err != nil {
+		return nil, errors.New("Expecting integer value for asset holding")
+	}
+	F = args[10]
+	Fval, err = strconv.Atoi(args[11])
+	if err != nil {
+		return nil, errors.New("Expecting integer value for asset holding")
+	}
+	fmt.Printf("Aval = %d, Bval = %d\n", Aval, Bval, Cval, Dval, Eval, Fval)
 
 	// Write the state to the ledger
 	err = stub.PutState(A, []byte(strconv.Itoa(Aval)))
@@ -57,6 +74,22 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string
 	}
 
 	err = stub.PutState(B, []byte(strconv.Itoa(Bval)))
+	if err != nil {
+		return nil, err
+	}
+	err = stub.PutState(C, []byte(strconv.Itoa(Cval)))
+	if err != nil {
+		return nil, err
+	}
+	err = stub.PutState(D, []byte(strconv.Itoa(Dval)))
+	if err != nil {
+		return nil, err
+	}
+	err = stub.PutState(E, []byte(strconv.Itoa(Eval)))
+	if err != nil {
+		return nil, err
+	}
+	err = stub.PutState(F, []byte(strconv.Itoa(Fval)))
 	if err != nil {
 		return nil, err
 	}
