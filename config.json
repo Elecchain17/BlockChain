@@ -1,8 +1,8 @@
 {
-   "chainName":"elechaintester",
+   "chainName":"elechaintesterrrrrr",
    "deployWaitTime":"60",
    "user": {
-	"username": "admin",
+	"username": "JohnDoe",
         "affiliation" : "group1"
    },
    "deployRequest":{

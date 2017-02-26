@@ -19,7 +19,8 @@ app.post('/vote', function(req, res){
 
     
     var initialize = require('./helloblockchain.js');
-
+    console.log('here');
+    initialize.init();
 });
 
 
