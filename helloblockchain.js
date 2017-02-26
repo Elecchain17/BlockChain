@@ -31,7 +31,7 @@ function init() {
         config = JSON.parse(fs.readFileSync(__dirname + '/config.json', 'utf8'));
     } catch (err) {
         console.log("config.json is missing or invalid file, Rerun the program with right file")
-        process.exit();
+        // process.exit();
     }
 
     // Create a client blockchin.
@@ -45,7 +45,7 @@ function init() {
         if (network.credentials) network = network.credentials;
     } catch (err) {
         console.log("ServiceCredentials.json is missing or invalid file, Rerun the program with right file")
-        process.exit();
+        // process.exit();
     }
 
     peers = network.peers;
@@ -189,7 +189,7 @@ function deployChaincode() {
     deployTx.on('error', function(err) {
         // Deploy request failed
         console.log(util.format("\nFailed to deploy chaincode: request=%j, error=%j", deployRequest, err));
-        process.exit(1);
+        // process.exit(1);
     });
 }
 
@@ -222,7 +222,7 @@ function invoke() {
     invokeTx.on('error', function(err) {
         // Invoke transaction submission failed
         console.log(util.format("\nFailed to submit chaincode invoke transaction: request=%j, error=%j", invokeRequest, err));
-        process.exit(1);
+        // process.exit(1);
     });
 
     //Listen to custom events
@@ -251,12 +251,12 @@ function query() {
     queryTx.on('complete', function(results) {
         // Query completed successfully
         console.log("\nSuccessfully queried  chaincode function: request=%j, value=%s", queryRequest, results.result.toString());
-        process.exit(0);
+        // process.exit(0);
     });
     queryTx.on('error', function(err) {
         // Query failed
         console.log("\nFailed to query chaincode, function: request=%j, error=%j", queryRequest, err);
-        process.exit(1);
+        // process.exit(1);
     });
 }
 
